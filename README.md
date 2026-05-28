@@ -28,7 +28,7 @@ Aplicación de escritorio desarrollada en Java que permite gestionar informació
 
 ## Instalación y ejecución
 
-# Base de datos
+## Base de datos
 
 La aplicación utiliza MySQL para almacenar la información.
 
