@@ -1,0 +1,10 @@
+# Changelog
+
+## v1.0
+
+- Arquitectura MVC implementada
+- Gestión de autobuses
+- Gestión de conductores
+- Gestión de rutas
+- Conexión MySQL
+- Interfaz Swing
