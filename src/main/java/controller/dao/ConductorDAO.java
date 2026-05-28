@@ -1,6 +1,7 @@
 package controller.dao;
 
 import controller.connection.ConexionBBDD;
+import models.Bus;
 import models.Conductor;
 
 import java.sql.Connection;
@@ -8,6 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
+import static controller.dao.DAO.con;
 
 public class ConductorDAO {
 
@@ -40,22 +43,27 @@ public class ConductorDAO {
      * Obtiene todos los conductores almacenados en la base de datos
      * @return Lista con todos los conductores; lista vacía si no hay ninguno o si ocurre un error de conexión
      */
-    public ArrayList<Conductor> getConductores() {
-        ArrayList<Conductor> conductores = new ArrayList<>();
-
-        try (Connection con = ConexionBBDD.getConexion();
-             PreparedStatement ps = con.prepareStatement(SQL_GET_ALL);
-             ResultSet rs = ps.executeQuery()) {
-
-            while (rs.next()) {
-                conductores.add(mapearConductor(rs));
-            }
-
-        } catch (SQLException e) {
-            System.out.println("Error al obtener los conductores: " + e.getMessage());
+    public static ArrayList<Conductor> getConductores() {
+        String consulta = "SELECT numdriver, name, surname FROM Driver";
+        ArrayList<Conductor> conductors = new ArrayList<>();
+        // Se asume que DAO.con es una conexión estática ya inicializada
+        if (con == null) {
+            System.out.println("Error: conexión no inicializada");
+            return conductors;
         }
-
-        return conductores;
+        try (PreparedStatement ps = con.prepareStatement(consulta);
+             ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
+                Conductor c = new Conductor();
+                c.setNumeroConductor(rs.getInt("numdriver"));
+                c.setNombreConductor(rs.getString("name"));
+                c.setApellidoConductor(rs.getString("surname"));
+                conductors.add(c);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error con la base de datos: " + e.getMessage());
+        }
+        return conductors;
     }
 
     /**
