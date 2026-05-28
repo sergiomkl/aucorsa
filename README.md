@@ -28,7 +28,7 @@ Aplicación de escritorio desarrollada en Java que permite gestionar informació
 
 ## Instalación y ejecución
 
-# Base de datos
+## Base de datos
 
 La aplicación utiliza MySQL para almacenar la información.
 
@@ -240,8 +240,35 @@ Gestiona todas las ventanas y componentes gráficos.
 
 Gestiona eventos, acciones del usuario y comunicación entre vista y modelo.
 
+# Escalabilidad y mantenimiento
+
+La arquitectura MVC facilita la ampliación del sistema separando la lógica de negocio, la interfaz gráfica y el acceso a datos.
+
+## Añadir nuevas funcionalidades
+
+Para añadir nuevas funcionalidades se recomienda:
+
+1. Crear el modelo correspondiente.
+2. Crear la vista Swing asociada.
+3. Implementar el controlador.
+4. Añadir conexión con la base de datos si es necesario.
+
+## Tests
+
+Las pruebas unitarias se encuentran en:
+
+```plaintext
+src/test
+```
+
+Pueden ejecutarse mediante Maven:
+
+```bash
+mvn test
+```
+
 # Diagrama UML
 
 El siguiente diagrama representa la arquitectura principal del sistema.
 
-![Diagrama UML](docs/dada.png)
+![Diagrama UML](docs/UML.png)
