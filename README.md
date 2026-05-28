@@ -163,3 +163,8 @@ mvn test
 El siguiente diagrama representa la arquitectura principal del sistema.
 
 ![Diagrama UML](docs/UML.png)
+
+
+# Autor
+
+Proyecto desarrollado por Sergio.
