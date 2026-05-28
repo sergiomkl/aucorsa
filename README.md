@@ -244,4 +244,4 @@ Gestiona eventos, acciones del usuario y comunicación entre vista y modelo.
 
 El siguiente diagrama representa la arquitectura principal del sistema.
 
-![Diagrama UML](Proyecto Relevo Desarrolador/UML.png)
+![Diagrama UML](docs/UML.png)
