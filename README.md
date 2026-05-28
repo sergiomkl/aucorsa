@@ -26,7 +26,7 @@ Aplicación de escritorio desarrollada en Java que permite gestionar informació
 * JDK 17 o superior
 * Git
 
-## Instalación y ejecución
+# Instalación y ejecución
 
 ## Base de datos
 
