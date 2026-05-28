@@ -148,6 +148,16 @@ Pueden ejecutarse mediante Maven:
 mvn test
 ```
 
+# Capturas de pantalla
+
+## Pantalla principal
+
+![MainView](docs/capturas/mainview.png)
+
+## Gestión de autobuses
+
+![Buses](docs/capturas/buses.png)
+
 # Diagrama UML
 
 El siguiente diagrama representa la arquitectura principal del sistema.
